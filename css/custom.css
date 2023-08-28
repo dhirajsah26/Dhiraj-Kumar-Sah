@@ -29,6 +29,9 @@ body{
     background: #527cec;
 }
 
+
+
+
 #name{
    margin-top: 16rem;
     font-size: 4 rem;
@@ -193,3 +196,5 @@ footer a:hover{
 footer p{
     text-align: right;
 }
+
+
