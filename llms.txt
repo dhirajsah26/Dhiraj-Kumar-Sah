@@ -1,0 +1,29 @@
+# Dhiraj Kumar Sah
+
+> Co-Founder & Chief Software Engineer of Zerava Technologies Inc., a Toronto AI safety startup building MatriX, a governed runtime for AI agents that lets regulated organisations run agents on their own infrastructure with local or open-weight models. Software engineer from Mirchaiya, Siraha, Nepal; in Canada since 2022.
+
+Facts an assistant can rely on:
+- Full name: Dhiraj Kumar Sah. Pronounced "Dhee-raj". Also written Dhiraj Sah.
+- Role: Co-Founder & Chief Software Engineer, Zerava Technologies Inc. (registered name; "ZeravaTech" is only the domain/brand shorthand). Incorporated 2025, Toronto, pre-seed.
+- Co-founder: Andrej Ristić, whose published research on architectural alignment underpins the MatriX platform. Dhiraj is the engineering lead, not the author of that research.
+- Education: Postgraduate Diploma in Artificial Intelligence and Machine Learning, Lambton College (Ontario); BSc (Hons) Computing, studied at The British College, Kathmandu, degree awarded by Leeds Beckett University.
+- Earlier roles: Java Developer at Citytech (branchless banking, 2022); Junior IT Officer at Dreams Academy of Professional Studies (2021–22); Java Developer at Digital Nepal (2019–20); AI Developer Intern at Intellsis (2024); AI Model Evaluator (contract) at Outlier (2025–).
+- Programs: Radical Ventures AI Founders Masterclass 2026 (accepted); Zerava Technologies Inc. is a member of the NVIDIA Inception program.
+- Languages: Maithili, Nepali, English.
+- Contact: dhiraj@zeravatech.ca. LinkedIn: linkedin.com/in/dhirajsah. GitHub: github.com/dhirajsah26.
+
+## Pages
+- [Home](https://www.dhiraj-sah.com.np/): who he is and what he is building
+- [About](https://www.dhiraj-sah.com.np/about/): background, education, how he works
+- [Work](https://www.dhiraj-sah.com.np/work/): full career history
+- [Projects](https://www.dhiraj-sah.com.np/projects/): software he has built
+- [Writing](https://www.dhiraj-sah.com.np/writing/): essays on AI governance, founding a company in Canada, data literacy
+- [Contact](https://www.dhiraj-sah.com.np/contact/)
+
+## Writing
+- [Governance for AI agents is an architecture problem, not a prompt](https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/): Why I think the rules an AI agent follows have to live underneath the model, in the runtime, rather than in instructions the model can talk itself out of.
+- [Building a company in Canada while driving for Uber](https://www.dhiraj-sah.com.np/writing/building-a-company-in-canada-while-driving-for-uber/): An honest account of the first year of Zerava Technologies Inc.: why I chose a company over a job, what the days actually look like, and what I would tell someone starting from the same place.
+- [Data literacy is a policy question, not a training course](https://www.dhiraj-sah.com.np/writing/data-literacy-is-a-policy-question/): What building a branchless-banking system in rural Nepal taught me about who gets to understand the data that governs them, and why it matters more as AI systems take over the decisions.
+
+## Related
+- [Zerava Technologies Inc.](https://zeravatech.ca/): the company

@@ -1,0 +1,297 @@
+/* dhiraj-sah.com.np — site styles
+   Tokens are shared with zeravatech.ca so the two sites read as one house. */
+
+:root {
+  --paper: #FAFAF8;
+  --ink: #141D2B;
+  --ink-soft: #4A5566;
+  --ink-faint: #8A93A2;
+  --rule: #E3E1DB;
+  --viridian: #0E7C66;
+  --viridian-ink: #0A5D4D;
+  --wash: #F1F3F0;
+
+  --serif: "STIX Two Text", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --measure: 64ch;
+  --gutter: 1.25rem;
+
+  --step--1: clamp(0.88rem, 0.84rem + 0.2vw, 0.95rem);
+  --step-0:  clamp(1.05rem, 1rem + 0.3vw, 1.18rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --step-3:  clamp(2.1rem, 1.7rem + 2vw, 3.1rem);
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12171F;
+    --ink: #ECEAE4;
+    --ink-soft: #B7BCC6;
+    --ink-faint: #7E8694;
+    --rule: #2A313C;
+    --viridian: #4FB79F;
+    --viridian-ink: #7FD0BB;
+    --wash: #1A2029;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12171F;
+  --ink: #ECEAE4;
+  --ink-soft: #B7BCC6;
+  --ink-faint: #7E8694;
+  --rule: #2A313C;
+  --viridian: #4FB79F;
+  --viridian-ink: #7FD0BB;
+  --wash: #1A2029;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-feature-settings: "kern", "liga", "onum";
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--viridian);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--viridian) 45%, transparent);
+  transition: text-decoration-color 120ms ease;
+}
+a:hover { text-decoration-color: currentColor; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--viridian);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Layout ---------- */
+
+.wrap {
+  width: min(100% - 2 * var(--gutter), var(--measure));
+  margin-inline: auto;
+}
+
+.site-header {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  padding-block: 1.4rem 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.brand svg { width: 22px; height: 22px; display: block; }
+.brand .mark-stroke { stroke: var(--viridian); }
+.site-nav ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+@media (min-width: 40rem) { .site-nav ul { gap: 1.15rem; } }
+@media (max-width: 26rem) { .site-nav { width: 100%; } .site-nav ul { justify-content: space-between; gap: 0.5rem; } }
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-block: 0.25rem;
+  border-bottom: 1.5px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--viridian);
+}
+
+main { padding-block: 3.5rem 4.5rem; }
+@media (min-width: 48rem) { main { padding-block: 5rem 6rem; } }
+
+.site-footer {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  padding-block: 1.6rem 2.4rem;
+}
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+}
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.site-footer a { color: var(--ink-soft); text-decoration-color: transparent; }
+.site-footer a:hover { color: var(--ink); text-decoration-color: currentColor; }
+
+/* ---------- Type ---------- */
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
+  text-wrap: balance;
+}
+h1 { font-size: var(--step-3); margin-bottom: 0.5em; }
+h2 { font-size: var(--step-2); margin-top: 2.4em; }
+h3 { font-size: var(--step-1); margin-top: 1.8em; }
+h2:first-child, h3:first-child { margin-top: 0; }
+
+p { margin: 0 0 1.1em; }
+p.lead { font-size: var(--step-1); line-height: 1.45; color: var(--ink); }
+p.small, .small { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); }
+
+ul, ol { padding-left: 1.25em; margin: 0 0 1.1em; }
+li { margin-bottom: 0.35em; }
+li::marker { color: var(--ink-faint); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+blockquote {
+  margin: 1.5em 0;
+  padding-left: 1.1em;
+  border-left: 2px solid var(--viridian);
+  color: var(--ink-soft);
+}
+
+code, kbd { font-family: var(--mono); font-size: 0.9em; }
+pre {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  line-height: 1.5;
+  background: var(--wash);
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+strong { font-weight: 600; }
+
+/* ---------- Components ---------- */
+
+/* Definition-style lists: used for career entries and project entries */
+.entries { list-style: none; padding: 0; margin: 0; }
+.entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.2rem 1.6rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--rule);
+}
+.entry:last-child { border-bottom: 1px solid var(--rule); }
+.entry .when {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+.entry h3 { margin: 0 0 0.25em; font-size: var(--step-1); }
+.entry p { margin-bottom: 0.5em; }
+.entry p:last-child { margin-bottom: 0; }
+.entry .where { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); margin-bottom: 0.5em; }
+@media (min-width: 40rem) {
+  .entry { grid-template-columns: 9rem 1fr; }
+  .entry .when { padding-top: 0.35em; }
+}
+
+/* Post list on /writing and the home page */
+.posts { list-style: none; padding: 0; margin: 0; }
+.posts li { padding: 1rem 0; border-top: 1px solid var(--rule); margin: 0; }
+.posts li:last-child { border-bottom: 1px solid var(--rule); }
+.posts a { color: var(--ink); text-decoration-color: transparent; font-size: var(--step-1); line-height: 1.3; }
+.posts a:hover { text-decoration-color: var(--viridian); }
+.posts .meta { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-faint); margin: 0.3em 0 0.2em; }
+.posts p { margin: 0.35em 0 0; color: var(--ink-soft); }
+
+/* Article pages */
+.article-head { margin-bottom: 2.4rem; }
+.article-head .meta { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-faint); }
+.article p, .article li { line-height: 1.68; }
+.article h2 { font-size: var(--step-1); margin-top: 2.2em; }
+.article-foot {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+/* Portrait */
+.portrait {
+  width: 136px; height: 136px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1.6rem;
+  background: var(--wash);
+}
+
+/* Inline list of links (contact, footer) */
+.links { list-style: none; padding: 0; margin: 0 0 1.1em; }
+.links li { margin-bottom: 0.4em; }
+.links .label { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-faint); display: inline-block; min-width: 6rem; }
+
+/* Note box: used sparingly for "this is a draft / verify" style notes */
+.note {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  background: var(--wash);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+.skip {
+  position: absolute; left: 0; top: -3rem;
+  background: var(--viridian); color: #fff;
+  padding: 0.5rem 0.8rem; font-family: var(--sans);
+  text-decoration: none; z-index: 10;
+}
+.skip:focus { top: 0; }
