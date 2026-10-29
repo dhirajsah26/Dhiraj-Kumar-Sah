@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.dhiraj-sah.com.np/sitemap.xml

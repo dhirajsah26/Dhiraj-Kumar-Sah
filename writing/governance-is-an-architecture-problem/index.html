@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Governance for AI agents is an architecture problem, not a prompt — Dhiraj Kumar Sah</title>
+<meta name="description" content="Why I think the rules an AI agent follows have to live underneath the model, in the runtime, rather than in instructions the model can talk itself out of.">
+<link rel="canonical" href="https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/">
+<meta name="author" content="Dhiraj Kumar Sah">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dhiraj Kumar Sah">
+<meta property="og:title" content="Governance for AI agents is an architecture problem, not a prompt — Dhiraj Kumar Sah">
+<meta property="og:description" content="Why I think the rules an AI agent follows have to live underneath the model, in the runtime, rather than in instructions the model can talk itself out of.">
+<meta property="og:url" content="https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/">
+<meta property="og:image" content="https://www.dhiraj-sah.com.np/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dhiraj Kumar Sah — Co-Founder & Chief Software Engineer, Zerava Technologies Inc., Toronto">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Governance for AI agents is an architecture problem, not a prompt — Dhiraj Kumar Sah">
+<meta name="twitter:description" content="Why I think the rules an AI agent follows have to live underneath the model, in the runtime, rather than in instructions the model can talk itself out of.">
+<meta name="twitter:image" content="https://www.dhiraj-sah.com.np/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Dhiraj Kumar Sah — Writing" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+<meta property="article:published_time" content="2026-10-28">
+<meta property="article:author" content="https://www.dhiraj-sah.com.np/about/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://www.dhiraj-sah.com.np/#person", "name": "Dhiraj Kumar Sah", "alternateName": "Dhiraj Sah", "url": "https://www.dhiraj-sah.com.np/", "image": "https://www.dhiraj-sah.com.np/assets/dhiraj-kumar-sah.jpg", "jobTitle": "Co-Founder & Chief Software Engineer", "worksFor": {"@type": "Organization", "@id": "https://zeravatech.ca/#organization", "name": "Zerava Technologies Inc.", "url": "https://zeravatech.ca/"}, "homeLocation": {"@type": "Place", "name": "Toronto, Ontario, Canada"}, "nationality": {"@type": "Country", "name": "Nepal"}, "knowsLanguage": ["en", "ne", "mai"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Lambton College", "description": "Postgraduate Diploma, Artificial Intelligence and Machine Learning"}, {"@type": "CollegeOrUniversity", "name": "Leeds Beckett University", "description": "BSc (Hons) Computing, studied at The British College, Kathmandu"}], "knowsAbout": ["AI safety", "AI agent governance", "multi-agent systems", "software engineering", "Java", "Python", "machine learning", "fintech software", "startups in Canada"], "sameAs": ["https://www.linkedin.com/in/dhirajsah", "https://github.com/dhirajsah26", "https://zeravatech.ca/"], "email": "mailto:dhiraj@zeravatech.ca"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/#article", "headline": "Governance for AI agents is an architecture problem, not a prompt", "description": "Why I think the rules an AI agent follows have to live underneath the model, in the runtime, rather than in instructions the model can talk itself out of.", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "url": "https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/", "mainEntityOfPage": "https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/", "author": {"@id": "https://www.dhiraj-sah.com.np/#person"}, "publisher": {"@id": "https://www.dhiraj-sah.com.np/#person"}, "image": "https://www.dhiraj-sah.com.np/assets/og-image.png", "inLanguage": "en"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Dhiraj Kumar Sah, home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="mark-stroke" d="M12 3 21 20H3Z" fill="none" stroke-width="1.6" stroke-linejoin="round"/><path class="mark-stroke" d="M12 9.5 16.5 17h-9Z" fill="none" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Dhiraj Kumar Sah</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/writing/" aria-current="page">Writing</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+
+<article class="article">
+  <header class="article-head">
+    <h1>Governance for AI agents is an architecture problem, not a prompt</h1>
+    <div class="meta"><time datetime="2026-10-28">28 October 2026</time> · Dhiraj Kumar Sah</div>
+  </header>
+
+<p>Most of the AI agents I see deployed in businesses are governed the same way: a long system prompt that says what the agent may and may not do, a few keyword filters on the way in and out, and a person somewhere who is supposed to be watching. This works until it doesn't. The failure is rarely dramatic. It is a quiet drift: the agent is asked something slightly outside its brief, it reasons its way to a helpful-sounding answer, and the rule in the prompt is simply not the strongest signal in the room any more.</p>
+
+<p>I don't say this as a critic from the outside. I have built agents this way myself, and for a demo or an internal tool it is often fine. The problem starts when the agent is allowed to act — call tools, move records, send messages, spend money — on behalf of an organisation that is accountable for what it does. At that point "we told it not to" is not a control. It is a hope.</p>
+
+<h2>Where the rules live matters more than what they say</h2>
+
+<p>A prompt is an input to the model. The model weighs it against everything else it is given, including the user's message, the documents it retrieves, and the output of the tools it calls. Any of those can contain text that argues with the prompt, and the model has no principled way of knowing which voice is the one it is supposed to obey. Prompt injection is just the sharp edge of this; the dull edge is ordinary ambiguity.</p>
+
+<p>Contrast that with how we govern every other piece of software that acts on our behalf. A database user has permissions that the query cannot talk its way around. A process has a sandbox. A payment has a limit that is enforced by a system the requester does not control. None of these are perfect, but they share a property that prompts do not: the policy is enforced by a layer that sits <em>underneath</em> the thing being governed, and that layer does not reason, it checks.</p>
+
+<p>This is the thesis we are working on at <a href="https://zeravatech.ca/">Zerava Technologies Inc.</a>: that governance for AI agents has to be a property of the runtime they execute in, not an instruction they are given. Boundaries on what an agent can touch, a record of what it did and why, and a way to stop it that does not depend on asking nicely. The research behind our approach is my co-founder Andrej Ristić's; my part is turning it into something an enterprise can actually deploy, on their own infrastructure, with models they control.</p>
+
+<h2>What this looks like in practice</h2>
+
+<p>Three things change when you move governance out of the prompt and into the runtime.</p>
+
+<ul>
+<li><strong>The model becomes replaceable.</strong> If the controls are in the runtime, you can swap the model underneath for a smaller, local, or newer one without re-deriving your safety story from scratch. For regulated organisations that cannot send data to a third-party API, this is not a nice-to-have; it is the whole question.</li>
+<li><strong>Audit becomes a by-product, not a project.</strong> When every action passes through a layer that checks it, you get a log of every action and every check for free. Compliance teams stop asking the engineers to reconstruct what happened.</li>
+<li><strong>Failure becomes boring.</strong> An agent that tries something outside its boundary is stopped, logged, and reported. Nobody has to read a transcript to find out whether a rule was followed.</li>
+</ul>
+
+<h2>The honest caveat</h2>
+
+<p>None of this makes an agent <em>wise</em>. A runtime boundary stops an agent from doing what it is not permitted to do; it does not make the agent good at what it is permitted to do. You still need the model to be competent, the task to be well-specified, and a human to own the outcome. What architecture-level governance buys you is the ability to say, with evidence, what the agent could and could not have done. In most of the conversations I have with businesses, that is the thing they actually need before they will let an agent anywhere near real work.</p>
+
+<p>I'll write more about how we think about this as we build. If you are deploying agents inside an organisation that answers to a regulator, I would like to hear what has and hasn't worked for you.</p>
+
+  <footer class="article-foot">
+    <p>Written by <a href="/about/">Dhiraj Kumar Sah</a>, Co-Founder &amp; Chief Software Engineer of <a href="https://zeravatech.ca/">Zerava Technologies Inc.</a> Replies by <a href="/contact/">email</a> are welcome.</p>
+    <p>Older: <a href="/writing/building-a-company-in-canada-while-driving-for-uber/">Building a company in Canada while driving for Uber</a></p>
+  </footer>
+</article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 Dhiraj Kumar Sah. Toronto, Canada.</div>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/dhirajsah" rel="me">LinkedIn</a></li>
+      <li><a href="https://github.com/dhirajsah26" rel="me">GitHub</a></li>
+      <li><a href="https://zeravatech.ca/">Zerava Technologies Inc.</a></li>
+      <li><a href="/feed.xml">RSS</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

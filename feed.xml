@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Dhiraj Kumar Sah — Writing</title>
+  <link>https://www.dhiraj-sah.com.np/writing/</link>
+  <atom:link href="https://www.dhiraj-sah.com.np/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Essays on AI governance, data literacy and building a company in Canada.</description>
+  <language>en</language>
+  <lastBuildDate>Wed, 28 Oct 2026 09:00:00 -0400</lastBuildDate>
+  <item>
+    <title>Governance for AI agents is an architecture problem, not a prompt</title>
+    <link>https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/</link>
+    <guid isPermaLink="true">https://www.dhiraj-sah.com.np/writing/governance-is-an-architecture-problem/</guid>
+    <pubDate>Wed, 28 Oct 2026 09:00:00 -0400</pubDate>
+    <description>Why I think the rules an AI agent follows have to live underneath the model, in the runtime, rather than in instructions the model can talk itself out of.</description>
+  </item>
+  <item>
+    <title>Building a company in Canada while driving for Uber</title>
+    <link>https://www.dhiraj-sah.com.np/writing/building-a-company-in-canada-while-driving-for-uber/</link>
+    <guid isPermaLink="true">https://www.dhiraj-sah.com.np/writing/building-a-company-in-canada-while-driving-for-uber/</guid>
+    <pubDate>Tue, 20 Oct 2026 09:00:00 -0400</pubDate>
+    <description>An honest account of the first year of Zerava Technologies Inc.: why I chose a company over a job, what the days actually look like, and what I would tell someone starting from the same place.</description>
+  </item>
+  <item>
+    <title>Data literacy is a policy question, not a training course</title>
+    <link>https://www.dhiraj-sah.com.np/writing/data-literacy-is-a-policy-question/</link>
+    <guid isPermaLink="true">https://www.dhiraj-sah.com.np/writing/data-literacy-is-a-policy-question/</guid>
+    <pubDate>Mon, 12 Oct 2026 09:00:00 -0400</pubDate>
+    <description>What building a branchless-banking system in rural Nepal taught me about who gets to understand the data that governs them, and why it matters more as AI systems take over the decisions.</description>
+  </item>
+</channel>
+</rss>
